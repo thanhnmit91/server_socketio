@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+      <title>Demo Thanhnm</title>
+      <script src="jquery.js"></script>
+      <script src="socket.io/socket.io.js"></script>
+      <script>
+        //connect server
+        var socket = io("http://localhost:3000");
+
+        $(document).ready(function(){
+            $("#red").click(function(){
+              socket.emit("Client-send-color", "red");//phats tin hieu
+            });
+            $("#blu").click(function(){
+              socket.emit("Client-send-color", "blue");//phats tin hieu
+            });
+            $("#yel").click(function(){
+              socket.emit("Client-send-color", "yellow");//phats tin hieu
+            });
+        });
+        socket.on("Server-send-color", function(data){
+          $("body").attr("bgColor", data); 
+        });
+      </script>
+      <style>
+        #red, #blu, #yel{ width: 100px; height: 100px }
+        #red{background-color: red}
+        #blu{background-color: blue}
+        #yel{background-color: yellow}
+      </style>
+
+  </head>
+
+  <body bgColor="black">
+
+    <div id="red"></div>
+    <div id="yel"></div>
+    <div id="blu"></div>
+
+
+  </body>
+
+</html>

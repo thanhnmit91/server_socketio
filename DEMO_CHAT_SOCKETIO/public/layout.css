@@ -1,0 +1,14 @@
+#wrapper{width: 600px; margin: auto;}
+#txtUsername{background-color: transparent; border: solid 0.5px black; border-radius: 4px}
+#titleLogin{ text-align: center;}
+
+
+#left, #right: { min-height: 300px}
+#left{ width: 30%; float: left; }
+#right{ width: 70%; float: right; background-color: #9ba162}
+
+#sayHi{float: right;}
+#boxTitle{ border: solid 0.5px gray; border-radius: 4px; text-align: center;}
+#boxContent{ border: solid 0.5px white; border-radius: 4px; text-align: center; background-color: yellow;}
+
+#listMessages{ background-color: gray; height: 100px}
